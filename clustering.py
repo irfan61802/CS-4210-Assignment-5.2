@@ -36,7 +36,7 @@ for k in range(2,21):
      s=silhouette_score(X_training, kmeans.labels_)
      sil.append(s)
      if s>maxSil:
-         max_Sil=s
+         maxSil=s
          maxK=k
 
 #plot the value of the silhouette_coefficient for each k value of kmeans so that we can see the best k
@@ -54,5 +54,5 @@ df = pd.read_csv('testing_data.csv', sep=',', header=None)
 labels=np.array(df.values).reshape(1,len(df))[0]
 
 #Calculate and print the Homogeneity of this kmeans clustering
-print("K-Means Homogeneity Score = " + metrics.homogeneity_score(labels, kmeans.labels_).__str__())
 #--> add your Python code here
+print("K-Means Homogeneity Score = " + metrics.homogeneity_score(labels, kmeans.labels_).__str__())
